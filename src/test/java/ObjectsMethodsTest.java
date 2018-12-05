@@ -51,4 +51,34 @@ public class ObjectsMethodsTest {
     public void requireNonNullElseGet_nullObj_nullSupplier() {
         Objects.requireNonNullElseGet(null, null);
     }
+    
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkIndex_index_lessThan0_length10() {
+        Objects.checkIndex(-1, 10);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkIndex_index0_length0() {
+        Objects.checkIndex(0, 0);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkIndex_index0_lengthMinus1() {
+        Objects.checkIndex(0, -1);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkIndex_index1_length1() {
+        Objects.checkIndex(1, 1);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkIndex_index2_length1() {
+        Objects.checkIndex(2, 1);
+    }
+
+    @Test
+    public void checkIndex_index3_length6() {
+        assertThat(Objects.checkIndex(3, 6), is(3));
+    }
 }
