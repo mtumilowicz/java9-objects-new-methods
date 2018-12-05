@@ -111,4 +111,9 @@ public class ObjectsMethodsTest {
     public void checkFromToIndex_bigger() {
         Objects.checkFromToIndex(1, 10, 3);
     }
+    
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromIndexSize_size_lessThan0() {
+        Objects.checkFromIndexSize(5, -3, 10);
+    }
 }

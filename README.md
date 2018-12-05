@@ -52,3 +52,10 @@ we list the most interesting cases
     ```
     assertThat(Objects.checkFromToIndex(0, 3, 3), is(0));
     ```
+* `checkFromIndexSize`
+    ```
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromIndexSize_size_lessThan0() {
+        Objects.checkFromIndexSize(5, -3, 10);
+    }
+    ```
