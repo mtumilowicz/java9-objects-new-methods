@@ -31,6 +31,7 @@ Checks if `[fromIndex; toIndex) c [0; length)`.
     the range
 * `int checkFromIndexSize(int fromIndex, int size, int length)` - 
 Checks if `[fromIndex; fromIndex + size) c [0; length)`.
+    * returns fromIndex if the sub-range within bounds of the range
 
 # project description
 We provide basics tests of above mentioned methods. Below
