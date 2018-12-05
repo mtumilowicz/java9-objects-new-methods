@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java9-objects-new-methods.svg?branch=master)](https://travis-ci.com/mtumilowicz/java9-objects-new-methods)
+
 # java9-objects-new-methods
 Java9: Overview of new methods in the `Objects` class.
 
