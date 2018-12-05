@@ -81,4 +81,34 @@ public class ObjectsMethodsTest {
     public void checkIndex_index3_length6() {
         assertThat(Objects.checkIndex(3, 6), is(3));
     }
+    
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromToIndex_fromIndex_lessThan0() {
+        Objects.checkFromToIndex(-1, 6, 10);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromToIndex_toIndex_lessThan0() {
+        Objects.checkFromToIndex(1, -3, 10);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromToIndex_length_lessThan0() {
+        Objects.checkFromToIndex(1, 3, -1);
+    }
+
+    @Test
+    public void checkFromToIndex_equalTo() {
+        assertThat(Objects.checkFromToIndex(0, 3, 3), is(0));
+    }
+
+    @Test
+    public void checkFromToIndex_subset() {
+        assertThat(Objects.checkFromToIndex(1, 2, 3), is(1));
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void checkFromToIndex_bigger() {
+        Objects.checkFromToIndex(1, 10, 3);
+    }
 }
