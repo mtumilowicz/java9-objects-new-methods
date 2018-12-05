@@ -1,7 +1,7 @@
 # java9-objects-new-methods
 Java9: Overview of new methods in the `Objects` class.
 
-# project description
+# preface
 In Java 9, Objects class was extended with new static methods:
 * `T requireNonNullElse(T obj, T defaultObj)` - 
     * Returns the first argument if it is non-null and
@@ -26,3 +26,6 @@ Checks if `index e [0; length)`
 Checks if `[fromIndex; toIndex) c [0; length)`.
 * `int checkFromIndexSize(int fromIndex, int size, int length)` - 
 Checks if `[fromIndex; fromIndex + size) c [0; length)`.
+
+# project description
+We provide basics tests of above mentioned methods.
