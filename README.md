@@ -23,10 +23,12 @@ In Java 9, Objects class was extended with new static methods:
     }
     ```
 * `int checkIndex(int index, int length)` - 
-Checks if `index e [0; length)`
+Checks if `index e [0; length)`.
     * returns index if it is within bounds of the range
 * `int checkFromToIndex(int fromIndex, int toIndex, int length)` - 
 Checks if `[fromIndex; toIndex) c [0; length)`.
+    * returns fromIndex if the sub-range within bounds of 
+    the range
 * `int checkFromIndexSize(int fromIndex, int size, int length)` - 
 Checks if `[fromIndex; fromIndex + size) c [0; length)`.
 
@@ -45,4 +47,7 @@ we list the most interesting cases
         ```
         assertThat(Objects.checkIndex(3, 6), is(3));
         ```
-* 
+* `checkFromToIndex`
+    ```
+    assertThat(Objects.checkFromToIndex(0, 3, 3), is(0));
+    ```
