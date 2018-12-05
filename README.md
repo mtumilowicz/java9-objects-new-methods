@@ -31,13 +31,18 @@ Checks if `[fromIndex; toIndex) c [0; length)`.
 Checks if `[fromIndex; fromIndex + size) c [0; length)`.
 
 # project description
-We provide basics tests of above mentioned methods.
+We provide basics tests of above mentioned methods. Below
+we list the most interesting cases
 * `checkIndex`
     * `checkIndex(0, 0)`
-    ```
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void checkIndex_index0_length0() {
-        Objects.checkIndex(0, 0);
-    }
-    ```
-    
+        ```
+        @Test(expected = IndexOutOfBoundsException.class)
+        public void checkIndex_index0_length0() {
+            Objects.checkIndex(0, 0);
+        }
+        ```
+    * `checkIndex(3, 6)`
+        ```
+        assertThat(Objects.checkIndex(3, 6), is(3));
+        ```
+* 
